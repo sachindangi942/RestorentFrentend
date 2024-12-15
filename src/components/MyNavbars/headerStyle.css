@@ -1,0 +1,9 @@
+/* custom CSS to change dropdown title color */
+.custom-dropdown .dropdown-toggle {
+    color: #0D6EFD;
+}
+  
+  .custom-dropdown .dropdown-toggle:hover {
+    color: #0D6EFD;
+  }
+  
