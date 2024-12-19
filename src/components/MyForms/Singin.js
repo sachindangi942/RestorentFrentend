@@ -72,12 +72,15 @@ const Singin = () => {
             <MyInput
                 placeholder="Enter password"
                 id="password"
+                type = "password"
                 onChange={onChangeData}
                 err={err}
             />
 
             <br />
             <Button className="bg-info" onClick={login}>Login</Button>
+            <Link className="m-4" to={"/forgotpassword"}>forgot password</Link>
+            <br />
             <br />
             <Link to={"/registration"}>Don't have an account? Register here</Link>
         </div>

@@ -14,68 +14,69 @@ import Logout from "./components/Logout";
 import CreateUser from "./components/UserComponets/CreateUser";
 import Showusers from "./components/UserComponets/Showusers";
 import Spiner from "./components/Spiner";
+import ForgotPassword from "./components/PasswordAPI/ForgotPassword";
 
 function App() {
   const { loading } = useSelector(state => state.alert);
   console.log(loading)
   return (
-      <Router future={{ v7_relativeSplatPath: true }}>
-        <HeaderNav />
-        { loading ? <Spiner/> : 
-          <Routes>
-            <Route path="/registration" element={
-              <PublicRoute>
-                <MyForm />
-              </PublicRoute>
+    <Router future={{ v7_relativeSplatPath: true }}>
+      <HeaderNav />
+      {loading ? <Spiner /> :
+        <Routes>
+          <Route path="/registration" element={
+            <PublicRoute>
+              <MyForm />
+            </PublicRoute>
 
-            } />
-            <Route path="/singIn" element={
-              <PublicRoute>
-                <Singin />
-              </PublicRoute>
+          } />
+          <Route path="/singIn" element={
+            <PublicRoute>
+              <Singin />
+            </PublicRoute>
 
-            } />
+          } />
 
-            <Route path="/logout" element={
-              <PublicRoute>
-                <Logout />
-              </PublicRoute>
+          <Route path="/logout" element={
+            <PublicRoute>
+              <Logout />
+            </PublicRoute>
 
-            } />
+          } />
 
-            <Route path="/" element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
 
-            } />
-            <Route path="/addProduct" element={
-              <ProtectedRoute>
-                <AddProduct />
-              </ProtectedRoute>
-            } />
+          } />
+          <Route path="/addProduct" element={
+            <ProtectedRoute>
+              <AddProduct />
+            </ProtectedRoute>
+          } />
 
-            <Route path="/listProduct" element={
-              <ProtectedRoute>
-                <ProductList />
-              </ProtectedRoute>
-            } />
-            <Route path="/createuser" element={
-              <ProtectedRoute>
-                <CreateUser />
-              </ProtectedRoute>
-            } />
+          <Route path="/listProduct" element={
+            <ProtectedRoute>
+              <ProductList />
+            </ProtectedRoute>
+          } />
+          <Route path="/createuser" element={
+            <ProtectedRoute>
+              <CreateUser />
+            </ProtectedRoute>
+          } />
 
-            <Route path="/showusers" element={
-              <ProtectedRoute>
-                <Showusers />
-              </ProtectedRoute>
-            } />
-
-            <Route path="*" element={<PageNoteFound />} />
-          </Routes>
-        }
-      </Router>
+          <Route path="/showusers" element={
+            <ProtectedRoute>
+              <Showusers />
+            </ProtectedRoute>
+          } />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="*" element={<PageNoteFound />} />
+        </Routes>
+      }
+    </Router>
   );
 }
 
